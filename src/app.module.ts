@@ -12,7 +12,10 @@ import {
 
 // Modules
 import { PrismaModule } from './frameworks/services/database/prisma.module';
+import { AuthModule } from './use-cases';
 
+// Controllers
+import { AuthController } from './controllers';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -22,6 +25,8 @@ import { PrismaModule } from './frameworks/services/database/prisma.module';
       validationOptions: ConfigOptions,
     }),
     PrismaModule,
+    AuthModule,
   ],
+  controllers: [AuthController],
 })
 export class AppModule {}

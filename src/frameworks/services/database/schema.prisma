@@ -16,7 +16,7 @@ model User {
     username  String    @unique
     password  String
     comments  Comment[]
-    Session   Session[]
+    session   Session[]
 
     @@unique([username, email])
 }
